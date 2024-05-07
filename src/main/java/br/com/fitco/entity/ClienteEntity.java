@@ -1,13 +1,17 @@
 package br.com.fitco.entity;
 
+import br.com.fitco.dto.ClienteDTO;
 import jakarta.persistence.*;
+import org.springframework.beans.BeanUtils;
+
+import java.util.Objects;
 
 @Entity
 @Table(name="Cliente")
-public class ClienteEntity {
+public class ClienteEntity<V> {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
@@ -15,6 +19,10 @@ public class ClienteEntity {
 
     @Column(nullable = false)
     private String telefone;
+
+    public ClienteEntity(ClienteDTO clienteDTO) {
+        BeanUtils.copyProperties(clienteDTO, this);
+    }
 
     public Long getId() {
         return id;
@@ -38,5 +46,18 @@ public class ClienteEntity {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ClienteEntity<V> that = (ClienteEntity<V>) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
