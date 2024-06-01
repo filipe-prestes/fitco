@@ -14,7 +14,7 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public List<ClienteDTO> listarTodos(){
+    public List<ClienteDTO>  listarTodos(){
         List<ClienteEntity> clientes = clienteRepository.findAll();
         return clientes.stream().map(ClienteDTO::new).toList();
     }

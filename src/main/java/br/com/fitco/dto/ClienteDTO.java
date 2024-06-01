@@ -6,7 +6,7 @@ import org.springframework.beans.BeanUtils;
 public class ClienteDTO {
 
     private Long id;
-    private String name;
+    private String nome;
     private String telefone;
 
     public ClienteDTO() {
@@ -24,12 +24,12 @@ public class ClienteDTO {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTelefone() {

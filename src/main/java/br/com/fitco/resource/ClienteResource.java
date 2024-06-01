@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/recurso")
+@RequestMapping(value = "/cliente")
 @CrossOrigin
 public class ClienteResource {
 

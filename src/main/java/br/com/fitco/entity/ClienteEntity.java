@@ -10,6 +10,9 @@ import java.util.Objects;
 @Table(name="Cliente")
 public class ClienteEntity<V> {
 
+    public ClienteEntity() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
