@@ -1,7 +1,6 @@
-package br.com.fitco.resource;
+package br.com.fitco.controller;
 
 import br.com.fitco.dto.ClienteDTO;
-import br.com.fitco.entity.ClienteEntity;
 import br.com.fitco.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/cliente")
 @CrossOrigin
-public class ClienteResource {
+public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
